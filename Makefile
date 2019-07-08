@@ -339,6 +339,21 @@ envoy-shell: envoy-build-image.txt
 	$(ENVOY_SYNC_DOCKER_TO_HOST)
 .PHONY: envoy-shell
 
+base-envoy.DOCKER_IMAGE = $(if $(filter-out -,$(ENVOY_COMMIT)),quay.io/datawire/ambassador-base:envoy-$(ENVOY_COMMIT),donotpush.io/envoy-local-base-image)
+base-envoy.DOCKER_FLAGS =
+base-envoy.docker: Dockerfile.envoy $(if $(filter-out -,$(ENVOY_COMMIT)),$(var.)ENVOY_COMMIT,FORCE)
+base-go.DOCKER_IMAGE = 
+base-go.docker: Dockerfile.cached releng $(wildcard releng/*) multi/requirements.txt ambassador/requirements.txt base-envoy.docker
+base-ambassador.docker: Dockerfile.ambassador base-envoy.docker
+%.docker:
+	@PS4=; set -ex; if docker run --rm --entrypoint=true $($*.IMAGE); then \
+		$(DOCKER_BUILDFILE) --build=false --output=$@ -t $($*.IMAGE);
+	else \
+		$(DOCKER_BUILDFILE) --; \
+	fi
+
+
+
 docker-base-images:
 	@if [ -n "$(AMBASSADOR_DEV)" ]; then echo "Do not run this from a dev shell" >&2; exit 1; fi
 	@if ! docker run --rm --entrypoint=true $(ENVOY_BASE_IMAGE); then \
