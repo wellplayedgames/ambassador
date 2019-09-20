@@ -5,3 +5,4 @@
 !releng/
 !watt
 !envoy-bin/
+envoy-bin/*-static
