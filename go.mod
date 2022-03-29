@@ -16,7 +16,7 @@ require (
 	github.com/envoyproxy/protoc-gen-validate v0.0.15-0.20190405222122-d6164de49109
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/gogo/googleapis v1.3.0 // indirect
-	github.com/gogo/protobuf v1.3.0
+	github.com/gogo/protobuf v1.3.2
 	github.com/golang/protobuf v1.3.2
 	github.com/google/shlex v0.0.0-20181106134648-c34317bd91bf
 	github.com/gorilla/websocket v1.4.0
@@ -35,9 +35,9 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.3
 	github.com/stretchr/testify v1.4.0
-	golang.org/x/crypto v0.0.0-20190611184440-5c40567a22f8
-	golang.org/x/net v0.0.0-20190812203447-cdfb69ac37fc
-	golang.org/x/sys v0.0.0-20191024073052-e66fe6eb8e0c
+	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
+	golang.org/x/net v0.0.0-20201021035429-f5854403a974
+	golang.org/x/sys v0.0.0-20200930185726-fdedc70b468f
 	google.golang.org/grpc v1.23.0
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 	gopkg.in/yaml.v2 v2.2.4
