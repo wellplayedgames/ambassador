@@ -35,9 +35,9 @@ require (
 	github.com/spf13/cobra v0.0.5
 	github.com/spf13/pflag v1.0.3
 	github.com/stretchr/testify v1.4.0
-	golang.org/x/crypto v0.0.0-20190611184440-5c40567a22f8
-	golang.org/x/net v0.0.0-20190812203447-cdfb69ac37fc
-	golang.org/x/sys v0.0.0-20191024073052-e66fe6eb8e0c
+	golang.org/x/crypto v0.31.0
+	golang.org/x/net v0.25.0
+	golang.org/x/sys v0.28.0
 	google.golang.org/grpc v1.23.0
 	gopkg.in/natefinch/lumberjack.v2 v2.0.0
 	gopkg.in/yaml.v2 v2.2.4
